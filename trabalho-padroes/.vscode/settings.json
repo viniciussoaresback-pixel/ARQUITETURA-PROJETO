@@ -1,0 +1,7 @@
+{
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "out",
+  "terminal.integrated.env.windows": { "JAVA_TOOL_OPTIONS": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8" }
+}

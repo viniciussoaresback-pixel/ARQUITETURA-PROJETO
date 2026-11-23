@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Abrir a tela do sistema (Main)",
+      "request": "launch",
+      "mainClass": "transporte.Main",
+      "encoding": "UTF-8",
+      "vmArgs": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8"
+    },
+    {
+      "type": "java",
+      "name": "Demonstração no console (DemoConsole)",
+      "request": "launch",
+      "mainClass": "transporte.DemoConsole",
+      "encoding": "UTF-8",
+      "vmArgs": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8"
+    }
+  ]
+}
