@@ -1,0 +1,35 @@
+classDiagram
+direction TB
+class Pedido {
+  -numero : int
+  -cliente : String
+  -status : StatusPedido «AGUARDANDO_COLETA, EM_TRANSITO, ENTREGUE»
+  -observadores : List~ObservadorPedido~
+  +adicionarObservador(o) void
+  +removerObservador(o) void
+  -notificarObservadores() void
+  +alterarStatus(novo : StatusPedido) void
+  +getTransporte() String
+}
+class ObservadorPedido {
+  <<interface>>
+  +atualizar(pedido : Pedido) void
+}
+class NotificadorCliente {
+  +atualizar(pedido : Pedido) void
+}
+class PainelLogistica {
+  +atualizar(pedido : Pedido) void
+}
+class Financeiro {
+  +atualizar(pedido : Pedido) void
+}
+class TelaPrincipal {
+  <<JFrame>>
+  +atualizar(pedido : Pedido) void
+}
+Pedido o--> "0..*" ObservadorPedido : avisa
+ObservadorPedido <|.. NotificadorCliente
+ObservadorPedido <|.. PainelLogistica
+ObservadorPedido <|.. Financeiro
+ObservadorPedido <|.. TelaPrincipal

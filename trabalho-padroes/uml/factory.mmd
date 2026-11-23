@@ -1,0 +1,33 @@
+classDiagram
+direction TB
+class TelaPrincipal {
+  -logisticaEscolhida() Logistica
+}
+TelaPrincipal ..> Logistica : escolhe o criador
+class Logistica {
+  <<abstract>>
+  #criarTransporte()* Transporte
+  +planejarViagem(rota, distanciaKm, qtd) double
+  +getTipoTransporte() String
+}
+class LogisticaCegonha {
+  #criarTransporte() Transporte
+}
+class LogisticaGuincho {
+  #criarTransporte() Transporte
+}
+class Transporte {
+  <<interface>>
+  +getTipo() String
+  +getCapacidadeVeiculos() int
+  +calcularFrete(distanciaKm, qtd) double
+}
+class Cegonha
+class Guincho
+Logistica <|-- LogisticaCegonha
+Logistica <|-- LogisticaGuincho
+Transporte <|.. Cegonha
+Transporte <|.. Guincho
+Logistica ..> Transporte : usa
+LogisticaCegonha ..> Cegonha : cria
+LogisticaGuincho ..> Guincho : cria

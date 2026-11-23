@@ -1,0 +1,16 @@
+classDiagram
+class BancoDeDados {
+  <<Singleton>>
+  -instancia : BancoDeDados$
+  -registros : List~String~
+  -consultasRealizadas : int
+  -BancoDeDados()
+  +getInstancia()$ BancoDeDados
+  +salvar(registro : String) void
+  +listar() List~String~
+}
+class Pedido
+class TelaPrincipal
+TelaPrincipal ..> BancoDeDados : getInstancia()
+Pedido ..> BancoDeDados : getInstancia()
+BancoDeDados --> BancoDeDados : instância única
