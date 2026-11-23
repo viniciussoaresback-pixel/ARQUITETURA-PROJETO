@@ -1,0 +1,21 @@
+Trabalho de Arquitetura de Software e Padrões de Projetos - Bimestre 2 - 2026
+Aluno: VINICIUS SOARES BACK   RA: 25.7571
+
+Conteúdo:
+  Trabalho-Padroes-de-Projeto.docx  -> documento (propósito, motivação, UML, código e telas de cada padrão)
+  src/transporte/                   -> código-fonte Java (UTF-8)
+      Main.java          abre a tela do sistema (Java Swing)
+      DemoConsole.java   mesma demonstração só no console
+      singleton/ factory/ observer/   os 3 padrões
+      tela/              interface gráfica
+  uml/                              -> diagramas UML (imagens .png e fonte Mermaid .mmd)
+  telas/                            -> prints da tela funcionando
+  .vscode/                          -> configuração do VS Code (UTF-8 e botões de execução)
+
+Padrões aplicados: Singleton, Factory Method e Observer.
+
+Como executar (Java 11 ou superior):
+  VS Code: abra a pasta, vá em "Run and Debug" e escolha "Abrir a tela do sistema (Main)".
+  Terminal:
+    javac -encoding UTF-8 -d out src/transporte/*.java src/transporte/*/*.java
+    java -Dstdout.encoding=UTF-8 -cp out transporte.Main
